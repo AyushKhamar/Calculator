@@ -7,3 +7,134 @@
     border-radius: 15px !important;
 
 }
+
+.gadget {
+    flex: 1;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+input {
+    text-align: right;
+    border: #fff;
+}
+
+.display {
+    text-align: right;
+    margin-top: 200px;
+
+    input[type="text"] {
+        width: calc(100% - 60px);
+        padding: 10px;
+        font-size: 18px;
+
+    }
+
+    span {
+        display: inline-block;
+        padding: 10px;
+        font-size: 36px;
+        background-color: #fff;
+    }
+}
+
+.buttons {
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        
+    }
+
+    button {
+        width: calc(25% - 5px);
+        padding: 10px;
+        font-size: 18px;
+        border: none;
+        border-radius: 24px;
+        background-color: #d9d8d8;
+        cursor: pointer;
+        
+    }
+    button:hover {
+        background-color: rgb(200, 200, 200);
+        
+    }
+
+    .row button:last-child {
+        background-color: lightskyblue;
+    }
+    .row button:last-child:hover {
+        background-color: rgb(81, 183, 246);
+    }
+
+    .first-row button {
+        background-color: lightskyblue;
+    }
+    .first-row button:hover {
+        background-color: rgb(81, 183, 246);
+    }
+
+    .last-row {
+        display: flex;
+        justify-content: space-between !important;
+
+        button {
+            flex: 1;
+            padding: 10px;
+        }
+
+        button:last-child {
+            flex: 2;
+            background-color: lightgreen;
+        }
+        button:last-child {
+            flex: 2;
+            background-color: lightgreen;
+        }
+    }
+}
+
+
+
+button {
+    width: calc(25% - 5px);
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.history-panel {
+    width: 300px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 576px) {
+    .calculator {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .toggle {
+        top: 20px;
+        right: 20px;
+    }
+
+    .gadget,
+    .history-panel {
+        max-width: calc(100% - 40px);
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}

@@ -6,17 +6,18 @@ const Calculator = () => {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState("0");
   const [history, setHistory] = useState([]);
-
+  // hook to grab the history
   useEffect(() => {
     const storedHistory = localStorage.getItem("calculatorHistory");
     if (storedHistory) {
       setHistory(JSON.parse(storedHistory));
     }
   }, []);
+  // hook to store the history
   useEffect(() => {
     localStorage.setItem("calculatorHistory", JSON.stringify(history));
   }, [history]);
-
+  // Converts each expression into a function and evaluates the same
   const updateExpression = (exp) => {
     try {
       const expFunc = new Function("return " + exp);
@@ -29,7 +30,7 @@ const Calculator = () => {
       return null;
     }
   };
-
+  // Handles input, calls evaluate expression and sets the result and history
   const handleInput = (value) => {
     if (value === "=") {
       const newResult = updateExpression(query);
@@ -44,20 +45,20 @@ const Calculator = () => {
       setQuery((prevQuery) => prevQuery + value);
     }
   };
-
+  // clear button functionality
   const clearEnd = () => {
     setQuery((prevQuery) => prevQuery.replace(/[\d.]+$/, ""));
   };
-
+  // clear all button functionality
   const clearAll = () => {
     setQuery("");
     setResult("0");
   };
-
+  //backspace or delete last button functionality
   const deleteLast = () => {
     setQuery((prevQuery) => prevQuery.slice(0, -1));
   };
-
+  // The list is memoized so that we dont have to make the computation again and again
   const historyList = useMemo(() => {
     return history.map((entry, index) => (
       <li key={index}>

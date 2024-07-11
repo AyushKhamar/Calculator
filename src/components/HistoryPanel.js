@@ -2,6 +2,7 @@ import React from "react";
 import "./HistoryPanel.css";
 
 const HistoryPanel = ({ children }) => {
+  //clear history button functionality
   const handleClearHistory = () => {
     localStorage.removeItem("calculatorHistory");
     window.location.reload();
