@@ -1,0 +1,37 @@
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.history-toggle {
+    padding: 5px 10px;
+    font-size: 18px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+}
+.history-area {
+    height: 400px;
+    overflow-y: auto;
+}
+ul {
+    
+    list-style-type: none;
+    font-size: 18px;
+}
+
+ul li {
+    margin-bottom: 5;
+    margin-top: 12px;
+}
+
+.clear-history {
+    border-radius: 24px;
+    width: 10rem;
+    background-color: lightskyblue;
+}
+.clear-history:hover {
+    
+    background-color: rgb(81, 183, 246);    }
